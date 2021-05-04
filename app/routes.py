@@ -55,5 +55,8 @@ def handle_planets():
         db.session.add(new_planet)
         db.session.commit()
 
-        return (f"Planet {new_planet.name} successfully created", 201)
+        # return make_response(jsonify(f"Planet {new_planet.name} successfully created"), 201)
 
+        return make_response({
+            "message": "Planet successfully created"
+        }, 201)
